@@ -1,20 +1,23 @@
 import React from 'react';
 import debug from 'debug';
 import { navigateAction } from 'fluxible-router';
-
-const _debug = debug('fluxible-demo');
-
 import app from './app';
 
-import Application from './components/Application';
-
+const _debug = debug('fluxible-demo');
 debug.enable('*');
 
 window.React = React;
 
 _debug('create context');
-const context = app.createContext();
+var context = app.createContext();
 
-context.executeAction(navigateAction, {url: location.pathname}, function (err) {
-  console.log(err);
+const url = location.pathname;
+
+_debug(`executeAction: ${url}`);
+context.executeAction(navigateAction, {url: url}, function (err) {
+  window.context = context;
+  const mountNode = document.getElementById('app');
+  React.render(context.createElement(), mountNode, () => {
+    _debug('react rendered');
+  });
 });
