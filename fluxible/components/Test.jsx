@@ -1,17 +1,20 @@
 import React from 'react';
 import ApplicationStore from '../stores/ApplicationStore';
 
-class Home extends React.Component {
+class Test extends React.Component {
   render () {
     return (
-      <h1>Home</h1>
+      <div>
+        test
+      </div>
     );
   }
 }
 
-Home.contextTypes = {
+Test.contextTypes = {
   getStore: React.PropTypes.func,
   executeAction: React.PropTypes.func
 };
 
-export default Home;
+
+export default Test;

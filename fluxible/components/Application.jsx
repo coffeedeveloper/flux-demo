@@ -14,7 +14,7 @@ class Application extends React.Component {
     return (
       <div>
         <Nav />
-        <Handle />
+        <Handle context={this.context} />
       </div>
     );
   }

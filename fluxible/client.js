@@ -3,6 +3,7 @@ import debug from 'debug';
 import { navigateAction } from 'fluxible-router';
 import app from './app';
 
+
 const _debug = debug('fluxible-demo');
 debug.enable('*');
 
